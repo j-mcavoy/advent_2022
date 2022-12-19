@@ -23,13 +23,11 @@ fn split_inventories(str: &str) -> Vec<Inventory> {
         if idx == count - 1 {
             curr_inv.push(Calories::from_str_radix(line, 10).unwrap());
             out.push(curr_inv.clone());
+        } else if line.is_empty() {
+            out.push(curr_inv.clone());
+            curr_inv.clear();
         } else {
-            if line.is_empty() {
-                out.push(curr_inv.clone());
-                curr_inv.clear();
-            } else {
-                curr_inv.push(Calories::from_str_radix(line, 10).unwrap());
-            }
+            curr_inv.push(Calories::from_str_radix(line, 10).unwrap());
         }
     }
     out
