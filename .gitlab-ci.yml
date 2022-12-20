@@ -3,5 +3,6 @@ image: "rust:latest"
 test:cargo:
   script:
     - rustc --version && cargo --version
+    - rustup component add clippy
     - cargo clippy -- -Dwarnings
     - cargo test --workspace --verbose
