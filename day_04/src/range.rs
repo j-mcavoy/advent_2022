@@ -3,6 +3,7 @@ use crate::id::*;
 #[derive(PartialEq, Debug)]
 pub struct Range(Id, Id);
 impl Range {
+    #[allow(dead_code)]
     pub fn new<T: TryInto<Id>>(lower: T, upper: T) -> Self {
         (lower, upper).try_into().unwrap()
     }

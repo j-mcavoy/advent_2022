@@ -33,14 +33,14 @@ fn split_inventories(str: &str) -> Vec<Inventory> {
     out
 }
 
-fn part_1(inventories: &Vec<Inventory>) -> Calories {
+fn part_1(inventories: &[Inventory]) -> Calories {
     inventories
         .iter()
         .map(|inv| inv.iter().sum::<Calories>())
         .max()
         .unwrap()
 }
-fn part_2(inventories: &Vec<Inventory>) -> Calories {
+fn part_2(inventories: &[Inventory]) -> Calories {
     const TOP_N: u32 = 3;
     let mut heap: BinaryHeap<Calories> = BinaryHeap::new();
     for inv in inventories {
