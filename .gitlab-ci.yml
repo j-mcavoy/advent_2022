@@ -1,0 +1,8 @@
+image: "rust:latest"
+
+test:cargo:
+  script:
+    - rustc --version && cargo --version
+    - cargo install clippy
+    - cargo clippy -- -Dwarnings
+    - cargo test --workspace --verbose
