@@ -1,3 +1,6 @@
+mod fs_tree;
+mod terminal;
+
 fn main() {
-    println!("Hello, world!");
+    let input = include_str!("../input");
 }
